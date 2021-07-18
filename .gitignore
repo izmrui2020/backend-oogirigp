@@ -29,3 +29,6 @@
 config/credentials
 config/credentials/development.key
 config/credentials/development.yml
+config/credentials/development.yml.enc
+
+.env

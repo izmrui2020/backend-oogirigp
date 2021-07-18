@@ -10,6 +10,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'rack-cors', :require => 'rack/cors'
 gem 'active_model_serializers', '~>0.10.0'
 gem "aws-sdk-s3", require: false
+gem 'dotenv-rails', require: false
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
