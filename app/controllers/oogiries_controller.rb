@@ -1,0 +1,2 @@
+class OogiriesController < ApplicationController
+end
