@@ -1,6 +1,6 @@
 require "test_helper"
 
-class OogiriesControllerTest < ActionDispatch::IntegrationTest
+class OogirisControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

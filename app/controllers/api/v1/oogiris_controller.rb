@@ -1,19 +1,19 @@
 module Api
   module V1
-    class OogiriesController < ApplicationController
+    class OogirisController < ApplicationController
       before_action :set_oogiri, only: [:show, :update, :destroy]
       
       def index
-        @oogiries = Oogiri.all
-        render json: @oogiries
+        @oogiris = Oogiri.all
+        render json: @oogiris
       end
 
-      # GET /oogiries/1
+      # GET /oogiris/1
       def show
         render json: @oogiri
       end
 
-      # POST /oogiries
+      # POST /oogiris
       def create
         @oogiri = Oogiri.new(oogiri_params)
 
@@ -24,7 +24,7 @@ module Api
         end
       end
 
-      # PATCH/PUT /oogiries/1
+      # PATCH/PUT /oogiris/1
       def update
         if @oogiri.update(oogiri_params)
           render json: @oogiri
@@ -33,7 +33,7 @@ module Api
         end
       end
 
-      # DELETE /oogiries/1
+      # DELETE /oogiris/1
       def destroy
         @oogiri.destroy
       end
