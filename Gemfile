@@ -11,6 +11,9 @@ gem 'rack-cors', :require => 'rack/cors'
 gem 'active_model_serializers', '~>0.10.0'
 gem "aws-sdk-s3", require: false
 gem 'dotenv-rails', require: false
+gem 'carrierwave'
+gem 'fog'
+gem 'rmagick'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
