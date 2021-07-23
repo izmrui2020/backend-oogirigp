@@ -1,4 +1,12 @@
 require_relative './exception.rb'
 
-module Authenticator
+module Auth
+  def decode 
+    begin
+      require
+    rescue
+
+    ensure
+      
+  end
 end
