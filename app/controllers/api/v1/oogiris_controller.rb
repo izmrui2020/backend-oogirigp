@@ -3,6 +3,9 @@ module Api
     class OogirisController < ApplicationController
       before_action :set_oogiri, only: [:show, :update, :destroy]
       
+      def list
+      end
+
       def index
         @oogiris = Oogiri.all
         render json: @oogiris
@@ -46,7 +49,7 @@ module Api
 
         # Only allow a list of trusted parameters through.
         def oogiri_params
-          params.require(:oogiri).permit(:title, :oogiri, :description, :file_url, :image_url)
+          params.require(:oogiri).permit(:title, :oogiri, :description, :image_url)
         end
         
     end
