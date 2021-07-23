@@ -35,7 +35,8 @@ module Api
       end
 
       def user_params
-        params.require(:user).permit(:title)
+        params.require(:user).permit(
+          :title, :image, :image_cache, :remove_image)
       end
 
     end
