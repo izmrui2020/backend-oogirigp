@@ -7,7 +7,9 @@ module Api
       end
 
       def index
-        @oogiris = Oogiri.all
+        @oogiris = Oogiri.page(params[:page] ||= 1).per(5).order('created_at DESC')
+        pagination = resources_with_pagination(oogiris)
+
         render json: @oogiris
       end
 
