@@ -19,6 +19,11 @@ gem 'kaminari'
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'database_cleaner'
+  gem 'faker'
+  gem 'pry-rails'
+  gem 'pry-coolline'
 end
 
 group :development do
