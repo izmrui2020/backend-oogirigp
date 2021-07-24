@@ -23,7 +23,6 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'faker'
   gem 'pry-rails'
-  gem 'pry-coolline'
 end
 
 group :development do
