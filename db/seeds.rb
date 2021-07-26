@@ -8,7 +8,7 @@
 5.times do |num|
   num += 1
   User.create(
-    name: "user #{num}"
+    nickname: "user #{num}"
   )
 end
 
