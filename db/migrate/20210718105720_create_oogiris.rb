@@ -4,7 +4,6 @@ class CreateOogiris < ActiveRecord::Migration[6.1]
       t.string :title
       t.string :oogiri
       t.string :description
-      t.string :image_url
 
       t.timestamps
     end

@@ -52,7 +52,7 @@ module Api
         # Only allow a list of trusted parameters through.
         def oogiri_params
           params.require(:oogiri).permit(
-            :title, :oogiri, :description, :image_url :image)
+            :title, :oogiri, :description, :image)
         end
         
     end
