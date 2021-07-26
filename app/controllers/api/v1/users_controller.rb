@@ -10,16 +10,17 @@ module Api
       end
 
       def show
-        @user = User.find(params[:id])
-        render json: { status: 'SUCCESS', data: @user }
+        # @user = User.find(params[:id])
+        # render json: { status: 'SUCCESS', data: @user }
       end
 
       def create
-        user = User.new(user_params)
-        if user.save
-          render json: { status: 'SUCCESS', data: user }
+        newUser = User.new(user_params)
+
+        if newUser.save
+          render json: { status: 'SUCCESS', data: newUser }
         else
-          render json: { status: 'ERROR', data: user.errors }
+          render json: { status: 'ERROR', data: newUser.errors }
         end
       end
 
@@ -30,20 +31,19 @@ module Api
       end
 
       private
-
-      def set_user
-        @user = User.find(params[:id])
-      end
-
-      def user_params
-        params.require(:user).permit(
-          :naem, :image, :image_cache, :remove_image)
-      end
-
-      def logged_in
-        unless logged_in?
+        def set_user
+          @user = User.find(params[:id])
         end
-      end
+
+        def user_params
+          params.require(:user).permit(
+            :nickname, :avatar) #:image_cache, :remove_image)
+        end
+
+        def logged_in
+          unless logged_in?
+          end
+        end
     end
   end
 end

@@ -10,10 +10,11 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'rack-cors', :require => 'rack/cors'
 gem 'active_model_serializers', '~>0.10.0'
 gem "aws-sdk-s3", require: false
-gem 'dotenv-rails', require: false
+gem 'dotenv-rails'
 gem 'carrierwave'
 gem 'fog-aws'
 gem 'rmagick'
+gem 'mini_magick'
 gem 'kaminari'
 
 group :development, :test do
