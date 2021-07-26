@@ -3,6 +3,7 @@ module Api
     class UsersController < ApplicationController
       before_action :set_user: [:show, :update, :destroy]
 
+      #userの認証をして成功したら、Userの情報を投げる。
       def index
         @users = User.all
         render json: @users
@@ -36,9 +37,13 @@ module Api
 
       def user_params
         params.require(:user).permit(
-          :title, :image, :image_cache, :remove_image)
+          :naem, :image, :image_cache, :remove_image)
       end
 
+      def logged_in
+        unless logged_in?
+        end
+      end
     end
   end
 end
