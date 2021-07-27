@@ -28,9 +28,10 @@ ActiveRecord::Schema.define(version: 2021_07_26_161442) do
 
   create_table "users", force: :cascade do |t|
     t.string "nickname"
+    t.string "avatar"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "avatar"
+    t.string "avatarSrc"
   end
 
   add_foreign_key "oogiris", "users"

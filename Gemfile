@@ -7,11 +7,13 @@ gem 'rails', '~> 6.1.4'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
 gem 'bootsnap', '>= 1.4.4', require: false
-gem 'rack-cors', :require => 'rack/cors'
+gem 'rack-cors'     #:require => 'rack/cors'
 gem 'active_model_serializers', '~>0.10.0'
 gem "aws-sdk-s3", require: false
 gem 'dotenv-rails'
 gem 'carrierwave'
+gem 'carrierwave-base64'
+gem "carrierwave-mongoid"
 gem 'fog-aws'
 gem 'rmagick'
 gem 'mini_magick'

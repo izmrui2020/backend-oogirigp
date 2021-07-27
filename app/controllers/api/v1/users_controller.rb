@@ -1,7 +1,7 @@
 module Api
   module V1
     class UsersController < ApplicationController
-      before_action :set_user: [:show, :update, :destroy]
+      before_action :set_user, only: [:show, :update, :destroy]
 
       #userの認証をして成功したら、Userの情報を投げる。
       def index
@@ -36,13 +36,14 @@ module Api
         end
 
         def user_params
-          params.require(:user).permit(
-            :nickname, :avatar) #:image_cache, :remove_image)
+          # params.require(:user).permit(
+          #   :nickname, :avatar, :avatarSrc) #:image_cache, :remove_image)
+          params.permit(
+          :nickname, :avatar, :avatarSrc)
         end
 
         def logged_in
-          unless logged_in?
-          end
+          
         end
     end
   end
