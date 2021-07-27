@@ -36,10 +36,9 @@ module Api
         end
 
         def user_params
-          # params.require(:user).permit(
-          #   :nickname, :avatar, :avatarSrc) #:image_cache, :remove_image)
-          params.permit(
-          :nickname, :avatar, :avatarSrc)
+          params.require(:user).permit(
+            :nickname, :avatar) #:image_cache, :remove_image)
+        
         end
 
         def logged_in
