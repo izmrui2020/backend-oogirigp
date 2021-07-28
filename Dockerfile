@@ -12,5 +12,9 @@ WORKDIR $APP_ROOT
 ADD ./Gemfile $APP_ROOT/Gemfile
 ADD ./Gemfile.lock $APP_ROOT/Gemfile.lock
 
+
+# ログがうまくシンボリックリンクできない。
+# RUN ln -sf /dev/stdout log/development.log
+
 RUN bundle install
 ADD . $APP_ROOT
