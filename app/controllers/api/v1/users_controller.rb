@@ -11,11 +11,8 @@ module Api
 
       def show
         authenticate!
-        @user = User.
-        #find_byではなくwhereを使って2つオブジェクトが返却されたら例外処理。
-        #dbでユニークにするのがいいのかプログラムの例外を使用してユニークにするのかどっちがいい？
-        if User.where(username: params[:username]).exists?
-          @user = User.find(params[:username])
+        @user = User.find_by(username: params[:username])
+        if @user.present?
           render json: { status: 'SUCCESS', data: @user }
         else
           create!
