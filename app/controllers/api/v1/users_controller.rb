@@ -10,17 +10,17 @@ module Api
           render json: { status: 'SUCCESS', data: @user }
         else
           user_create!
-        end       
+        end
+        @user_data = @user.oogiris.paginate(page: params[:page])
       end
-      
 
       def destroy
         User.find(params[:id]).destroy
       end
 
       def edit
-        @user = User.find(params[:id])
-        @user.update(user_params)
+        @edit_user = User.find(params[:id])
+        @edit_user.update(user_params)
       end
 
       private
