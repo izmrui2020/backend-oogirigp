@@ -10,14 +10,19 @@ module Api
       end
 
       def show
-        # @user = User.find(params[:id])
-        # render json: { status: 'SUCCESS', data: @user }
-      end
-
-      def create
         authenticate!
-        newUser = User.new(user_params)
-
+        @user = User.
+        #find_byではなくwhereを使って2つオブジェクトが返却されたら例外処理。
+        #dbでユニークにするのがいいのかプログラムの例外を使用してユニークにするのかどっちがいい？
+        if User.where(username: params[:username]).exists?
+          @user = User.find(params[:username])
+          render json: { status: 'SUCCESS', data: @user }
+        else
+          create!
+        end       
+      end
+      def create
+        newUser = User.new(params[:username])
         if newUser.save
           render json: { status: 'SUCCESS', data: newUser }
         else
@@ -39,8 +44,7 @@ module Api
 
         def user_params
           params.require(:user).permit(:nickname, :avatar)
-          #:image_cache, :remove_image)require(:user)
-        
+          #:image_cache, :remove_image)require(:user)       
         end
 
         def logged_in
