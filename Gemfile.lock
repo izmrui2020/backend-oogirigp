@@ -67,6 +67,7 @@ GEM
       zeitwerk (~> 2.3)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
+    aes_key_wrap (1.1.0)
     aws-eventstream (1.1.1)
     aws-partitions (1.479.0)
     aws-sdk-core (3.117.0)
@@ -83,6 +84,7 @@ GEM
       aws-sigv4 (~> 1.1)
     aws-sigv4 (1.2.4)
       aws-eventstream (~> 1, >= 1.0.2)
+    bindata (2.4.10)
     bootsnap (1.7.5)
       msgpack (~> 1.0)
     builder (3.2.4)
@@ -149,7 +151,12 @@ GEM
     jbuilder (2.11.2)
       activesupport (>= 5.0.0)
     jmespath (1.4.0)
+    json-jwt (1.13.0)
+      activesupport (>= 4.2)
+      aes_key_wrap
+      bindata
     jsonapi-renderer (0.2.2)
+    jwt (2.2.3)
     kaminari (1.2.1)
       activesupport (>= 4.1.0)
       kaminari-actionview (= 1.2.1)
@@ -183,6 +190,7 @@ GEM
     nio4r (2.5.7)
     nokogiri (1.11.7-x86_64-linux)
       racc (~> 1.4)
+    openssl (2.2.0)
     pg (1.2.3)
     pry (0.14.1)
       coderay (~> 1.1)
@@ -280,9 +288,12 @@ DEPENDENCIES
   faker
   fog-aws
   jbuilder
+  json-jwt
+  jwt
   kaminari
   listen (~> 3.3)
   mini_magick
+  openssl
   pg (~> 1.1)
   pry-rails
   puma (~> 5.0)
