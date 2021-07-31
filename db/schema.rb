@@ -16,18 +16,20 @@ ActiveRecord::Schema.define(version: 2021_07_26_161442) do
   enable_extension "plpgsql"
 
   create_table "oogiris", force: :cascade do |t|
-    t.string "title"
-    t.string "oogiri"
+    t.string "title", null: false
+    t.string "oogiri", null: false
     t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "user_id"
+    t.bigint "user_id", null: false
     t.string "image"
     t.index ["user_id"], name: "index_oogiris_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
+    t.string "username", null: false
     t.string "nickname"
+    t.string "email"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "avatar"
