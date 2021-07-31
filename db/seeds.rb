@@ -18,7 +18,6 @@ end
       title: "Document #{num}",
       oogiri: "oogiri #{num}",
       description: "samplsamplesamplesamplesamplesamplesamplesamplesamplesamplesamplesamplesamplesample
-            samplesamplesamplesamplesamplesamplesamplesamplesamplesamplesample",
-      image_url: "https://sample.com",        
+            samplesamplesamplesamplesamplesamplesamplesamplesamplesamplesample",     
   )
 end
