@@ -3,44 +3,41 @@ module Api
     class UsersController < ApplicationController
       before_action :set_user, only: [:show, :update, :destroy]
 
-      #userの認証をして成功したら、Userの情報を投げる。
-      def index
-        @users = User.all
-        render json: @users
-      end
-
-      def show
-        # @user = User.find(params[:id])
-        # render json: { status: 'SUCCESS', data: @user }
-      end
-
-      def create
+      def check
         authenticate!
-        newUser = User.new(user_params)
-
-        if newUser.save
-          render json: { status: 'SUCCESS', data: newUser }
+        @user = User.find_by(username: params[:username])
+        if @user.present?
+          render json: { status: 'SUCCESS', data: @user }
         else
-          render json: { status: 'ERROR', data: newUser.errors }
-        end
+          user_create!
+        end       
       end
+      
 
       def destroy
       end
 
-      def update
+      def edit
         authenticate!
       end
 
       private
+        def user_create
+          newUser = User.new(params[:username])
+          if newUser.save
+            render json: { status: 'SUCCESS', data: newUser }
+          else
+            render json: { status: 'ERROR', data: newUser.errors }
+          end
+        end
+
         def set_user
           @user = User.find(params[:id])
         end
 
         def user_params
           params.require(:user).permit(:nickname, :avatar)
-          #:image_cache, :remove_image)require(:user)
-        
+          #:image_cache, :remove_image)require(:user)       
         end
 
         def logged_in

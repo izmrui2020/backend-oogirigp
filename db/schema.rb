@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 2021_07_26_161442) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "avatar"
+    t.index ["username"], name: "index_users_on_username"
   end
 
   add_foreign_key "oogiris", "users"
