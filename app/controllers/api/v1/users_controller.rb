@@ -15,6 +15,7 @@ module Api
       end
 
       def create
+        authenticate!
         newUser = User.new(user_params)
 
         if newUser.save
@@ -28,6 +29,7 @@ module Api
       end
 
       def update
+        authenticate!
       end
 
       private
