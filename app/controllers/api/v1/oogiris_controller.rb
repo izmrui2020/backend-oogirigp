@@ -15,7 +15,7 @@ module Api
 
       # GET /oogiris/1
       def show
-        render json: @oogiri
+        render json: @oogiri, each_serializer: OogiriSerializer
       end
 
       # POST /oogiris
