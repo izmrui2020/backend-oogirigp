@@ -5,19 +5,18 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-5.times do |num|
-  num += 1
-  User.create(
-    nickname: "user #{num}"
-  )
-end
+User.create(
+  username: 'user1',
+  nickname: 'nickname1',
+  email: 'test@sample.com'
+)
 
-5.times do |num|
+10.times do |num|
   num += 1
-  Oogiri.create!(
-      title: "Document #{num}",
-      oogiri: "oogiri #{num}",
-      description: "samplsamplesamplesamplesamplesamplesamplesamplesamplesamplesamplesamplesamplesample
-            samplesamplesamplesamplesamplesamplesamplesamplesamplesamplesample",     
-  )
+    user.oogiris.create!(
+        title: "Document #{num}",
+        oogiri: "oogiri #{num}",
+        description: "samplsamplesamplesamplesamplesamplesample", 
+        user_id: User.find.first,
+      )
 end

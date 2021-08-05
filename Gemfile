@@ -20,6 +20,7 @@ gem 'mini_magick'
 gem 'kaminari'
 gem 'jbuilder'
 
+
 # for jwt
 gem 'jwt'
 gem 'json-jwt'
@@ -28,16 +29,17 @@ gem 'openssl'
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails'
-  gem 'rails_db', '>= 2.3.1'
   gem 'factory_bot_rails'
   gem 'database_cleaner'
   gem 'faker'
   gem 'pry-rails'
+  gem 'rails_db', '>= 2.3.1'
 end
 
 group :development do
   gem 'listen', '~> 3.3'
   gem 'spring'
 end
+
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
